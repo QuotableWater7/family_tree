@@ -6,9 +6,9 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 
 import FamilyTree from './components/family_tree';
-import reducer from './reducers/index';
+import tree from './reducers/tree';
 
-const store = createStore(reducer);
+const store = createStore(tree);
 
 render(
   <Provider store={store}>

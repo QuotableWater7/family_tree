@@ -1,53 +1,19 @@
 'use strict';
 
-const _ = require('lodash');
+import { Tree, Node } from '../util/tree';
 
-class Tree {
+let sample_data = [
+  { id: 1, parent_id: null, full_name: 'A1' },
+  { id: 2, parent_id: 1, full_name: 'B1' },
+  { id: 3, parent_id: 1, full_name: 'B2' },
+  { id: 4, parent_id: 2, full_name: 'C1' },
+  { id: 5, parent_id: 4, full_name: 'D1' }
+];
 
-  constructor(parent) {
-    // because the nodes will be in an unpredictable order, having an
-    // index of the nodes will allow O(1) lookup when inserting/deleting nodes
-    this.nodes = {};
-  }
+let nodes = sample_data.map((node) => new Node(node));
+let tree = new Tree();
+tree.bulkInsert(nodes);
 
-  addRoot(parent) {
-    this.root = parent;
-    this.indexNode(parent);
-  }
-
-  insert(parent_id, node) {
-    let parent = this.nodes[parent_id];
-    parent.addChild(node);
-
-    this.indexNode(node);
-  }
-
-  indexNode(node) {
-    this.nodes[node.id] = node;
-  }
-
+export default function (state, action) {
+  return tree;
 }
-
-class Node {
-
-  constructor(opts = {}) {
-    this.children = opts.children || [];
-    this.parent = opts.parent || null;
-
-    this.opts = opts;
-  }
-
-  setParent(node) {
-    this.parent = node;
-  }
-
-  addChild(node) {
-    // do not mutate array (ImmutableJS would handle this given more time)
-    this.children = this.children.concat([node]);
-  }
-
-  removeChild(id) {
-    this.children = this.children.filter((child) => child.opts.id === id);
-  }
-
-};

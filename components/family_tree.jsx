@@ -2,14 +2,25 @@
 
 import React from 'react';
 import Node from './node';
+import { connect } from 'react-redux';
 
-const FamilyTree = ({ root }) => {
+const FamilyTree = ({ tree }) => {
   return (
     <div>
       <h3>Family Tree</h3>
-      <Node {...root}></Node>
+      <Node key={1}></Node>
     </div>
   );
 };
 
-export default FamilyTree;
+const mapStateToProps = (state) => {
+  return state;
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {};
+};
+
+const wrapper = connect(mapStateToProps, mapDispatchToProps)(FamilyTree);
+
+export default wrapper;
