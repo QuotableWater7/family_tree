@@ -4,11 +4,13 @@ import React from 'react';
 import Node from './node';
 import { connect } from 'react-redux';
 
-const FamilyTree = ({ tree }) => {
+const FamilyTree = ({ root }) => {
   return (
     <div>
       <h3>Family Tree</h3>
-      <Node key={1}></Node>
+      <ul>
+        <Node {...root}></Node>
+      </ul>
     </div>
   );
 };

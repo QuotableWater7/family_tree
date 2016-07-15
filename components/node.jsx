@@ -3,11 +3,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const Node = ({ full_name }) => {
+const Node = ({ id, full_name, children }) => {
+  children = children || [];
+
   return (
-    <div>
-      Node
-    </div>
+    <li key={id}>
+      <b>Name:</b> {full_name}
+      <br/>
+      <ul>
+        {children.map((child) => <Node {...child} key={child.id}/>)}
+      </ul>
+    </li>
   );
 };
 
