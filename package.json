@@ -1,0 +1,28 @@
+{
+  "name": "family_tree",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuotableWater7/family_tree.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QuotableWater7/family_tree/issues"
+  },
+  "homepage": "https://github.com/QuotableWater7/family_tree#readme",
+  "dependencies": {
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
