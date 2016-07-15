@@ -26,7 +26,11 @@ export default function (state, action) {
           children: [
             {
               full_name: 'C2',
-              hair_color: 'orange'
+              hair_color: 'orange',
+              children: [
+                { full_name: 'D1', hair_color: 'purple' },
+                { full_name: 'D2', hair_color: 'whatever' }
+              ]
             }
           ]
         }
